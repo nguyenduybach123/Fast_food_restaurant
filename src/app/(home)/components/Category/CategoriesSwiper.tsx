@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import CategoryItem from './CategoryItem'
 import { Navigation, Pagination } from 'swiper/modules'
 
-import 'swiper/css';
-
 const CategoriesSwiper = () => {
   return (
     <div className='mt-16 flex justify-center items-center'>

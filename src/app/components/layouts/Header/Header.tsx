@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import logoImage from '../../../../../assets/images/logo.webp';
+import logoImage from '../../../../assets/images/logo.webp';
 import { MenuNavigate } from './MenuNavigate'
 import { MenuInfo } from './MenuInfo'
 

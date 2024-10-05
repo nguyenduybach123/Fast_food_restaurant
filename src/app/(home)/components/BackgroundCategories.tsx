@@ -3,7 +3,6 @@ import React from 'react'
 import backgroundImage from '../../../assets/images/home/Background.png'
 import Image from 'next/image'
 
-
 export const BackgroundCategories = () => {
   return (
     <div className='relative h-full'>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import paypalImage from "../../../../assets/images/home/paypal.png"
+import paypalImage from "../../../assets/images/home/paypal.png";
 
 const Footer = () => {
   return (
@@ -18,11 +18,11 @@ const Footer = () => {
           <span className='font-semibold'>hello@lama.dev</span>
           <span className='font-semibold'>+1 234 567 890</span>
           <div className='flex gap-6'>
-            <Image src='/facebook.png' alt='' width={16} height={16} />
+            {/* <Image src='/facebook.png' alt='' width={16} height={16} />
             <Image src='/instagram.png' alt='' width={16} height={16} />
             <Image src='/youtube.png' alt='' width={16} height={16} />
             <Image src='/pinterest.png' alt='' width={16} height={16} />
-            <Image src='/x.png' alt='' width={16} height={16} />
+            <Image src='/x.png' alt='' width={16} height={16} /> */}
           </div>
         </div>
         {/* CENTER */}

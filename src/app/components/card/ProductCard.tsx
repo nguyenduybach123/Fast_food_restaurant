@@ -5,7 +5,7 @@ import { Rating } from './Rating'
 
 export const ProductCard = () => {
   return (
-    <div className='flex flex-col items-center p-3 hover:scale-105 transition duration-500 cursor-pointer' style={{boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}}>
+    <div className='flex flex-col items-center px-4 py-3 hover:scale-105 transition duration-500 cursor-pointer shadow-md'>
         <Image 
                className='w-full rounded-t-lg'
                src={testImage}
@@ -20,7 +20,7 @@ export const ProductCard = () => {
           <span className='text-sm text-gray-300'>If filename is showing instead of thunder client</span>
           <h3 className='w-full text-red-400 text-lg font-semibold my-2'>$4.00</h3>
         </div>
-        <button className='w-full text-white text-md font-semibold px-5 py-2 rounded-lg bg-[#F17228]' style={{boxShadow: "0px 5px 10px #FA6323"}} >Order Now</button>
+        <button className='w-full text-white text-md font-semibold px-5 py-2 rounded-lg bg-[#F17228]'>Order Now</button>
     </div>
   )
 }

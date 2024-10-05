@@ -2,11 +2,11 @@ import Image from "next/image";
 import categoryImage from "../../assets/images/home/Category_1.png"
 import footerImage from '../../assets/images/home/footer.jpg'
 
-import CategoriesSwiper from "./components/category/CategoriesSwiper";
+import CategoriesSwiper from "./components/Category/CategoriesSwiper";
 import { DeliveryQuickly } from "./components/DeliveryQuickly";
-import { GuideSection } from "./components/guide/GuideSection";
-import { ProductCardSwiper } from "../components/card/ProductCardSwiper";
-import { ProductCardFeatured } from "../components/card/ProductCardFeatured";
+import { GuideSection } from "./components/Guide/GuideSection";
+import { ProductCardSwiper } from "../components/Card/ProductCardSwiper";
+import { ProductCardFeatured } from "../components/Card/ProductCardFeatured";
 
 export default function Home() {
   return (
