@@ -1,13 +1,20 @@
-import React from 'react'
-import { Header } from '../components/layouts/Header/Header'
-import Footer from '../components/layouts/Footer'
+// Core
+import React, { FC } from "react";
 
-export default function HomeLayout({children}: {children: React.ReactNode}) {
-  return (
-    <div className='relative'>
-        <Header />
-        {children}
-        <Footer />
-    </div>
-  )
-}
+// App
+import { Header } from "../layouts/Header/Header";
+import Footer from "../layouts/Footer";
+
+// Component
+export const HomeLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
+    // Template
+    return (
+        <div className="relative">
+            <Header />
+            {children}
+            <Footer />
+        </div>
+    );
+};
+
+export default HomeLayout;
