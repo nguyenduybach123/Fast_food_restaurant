@@ -1,9 +1,10 @@
 // Core
 import React, { FC } from "react";
-import { CircleUserRound as CircleUserRoundIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
+import { CircleUserRound as CircleUserRoundIcon } from "lucide-react";
 
 // App
 import { cn } from "@/lib/utils";
+import { DrawerCart } from "../../Drawer/DrawerCart";
 
 // Component
 const MenuInfo: FC = () => {
@@ -20,7 +21,7 @@ const MenuInfo: FC = () => {
                         'after:content-["2"] after:w-6 after:h-6 after:absolute after:-top-2 after:right-0 after:rounded-full after:text-white after:text-center after:p-1 after:text-xs after:bg-[#fa012e] after:shadow-md',
                     )}
                 >
-                    <ShoppingCartIcon />
+                    <DrawerCart />
                 </li>
             </ul>
         </div>

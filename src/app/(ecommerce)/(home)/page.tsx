@@ -15,7 +15,6 @@ import { ProductCardFeatured } from "@/components/Card/ProductCardFeatured";
 import { FoodDeliveryAddress } from "./components/FoodDeliveryAddress";
 import { FoodCategory } from "./components/FoodCategory";
 import { OrderGuideStep } from "./components/OrderGuideStep";
-import { CartSlide } from "./components/Slide/Cart/CartSlide";
 
 // Component
 export const HomePage: FC = () => {
@@ -81,7 +80,6 @@ export const HomePage: FC = () => {
                     </div>
                 </div>
             </div>
-            <CartSlide />
         </div>
     );
 };

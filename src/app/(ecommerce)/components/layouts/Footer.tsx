@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import paypalImage from "../../assets/images/home/paypal.png";
+import paypalImage from "@/assets/images/home/paypal.png";
 
 const Footer = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import locationGuideImage from "../../../assets/images/home/guide/location.png";
+import locationGuideImage from "@/assets/images/home/guide/location.png";
 
 const OrderGuideStep: FC = () => {
     return (
