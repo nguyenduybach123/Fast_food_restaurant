@@ -13,7 +13,7 @@ const MenuInfo: FC = () => {
         <div className="hidden md:block">
             <ul className="flex items-center">
                 <li className="px-2">
-                    <CircleUserRoundIcon />
+                    <CircleUserRoundIcon width={30} height={30} />
                 </li>
                 <li
                     className={cn(

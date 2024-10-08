@@ -18,7 +18,7 @@ const DrawerCart = () => {
         <Drawer direction="right">
             <DrawerTrigger asChild>
                 <Button size={"icon"} variant="icon">
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon width={30} height={30} />
                 </Button>
             </DrawerTrigger>
             <DrawerContent className="w-full md:w-[400px]" position={"right"}>
@@ -36,7 +36,7 @@ const DrawerCart = () => {
                         </div>
                     </DrawerHeader>
                     <DrawerBody>
-                        <div className="flex flex-col h-[342px] overflow-y-hidden">
+                        <div className="flex flex-col h-[378px] overflow-y-hidden">
                             <FoodCardInCart />
                             <FoodCardInCart />
                             <FoodCardInCart />
