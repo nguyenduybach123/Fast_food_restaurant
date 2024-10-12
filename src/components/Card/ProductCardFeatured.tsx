@@ -1,10 +1,15 @@
-import cn from "classnames";
-import React from "react";
+import { cn } from "@/lib/utils";
+import { ComponentProps } from "@/types";
+import React, { FC } from "react";
 
-export const ProductCardFeatured = ({ isReverse = false }: { isReverse?: boolean }) => {
+interface CardFeaturedProps extends ComponentProps {
+    isReverse?: boolean;
+}
+
+export const ProductCardFeatured: FC<CardFeaturedProps> = ({ isReverse = false, className }) => {
     return (
         <div
-            className={cn("flex rounded-md mb-16 drop-shadow-lg", isReverse ? "flex-row-reverse" : "")}
+            className={cn("flex rounded-md drop-shadow-lg", isReverse ? "flex-row-reverse" : "", className)}
             style={{
                 boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
