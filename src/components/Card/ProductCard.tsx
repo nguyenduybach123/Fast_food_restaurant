@@ -2,11 +2,19 @@ import Image from "next/image";
 import React from "react";
 import testImage from "../../assets/images/home/TestProduct.jpg";
 import { Rating } from "./Rating";
+import { Button } from "../ui";
 
 export const ProductCard = () => {
     return (
-        <div className="flex flex-col items-center px-4 py-3 hover:scale-105 transition duration-500 cursor-pointer shadow-md">
-            <Image className="w-full rounded-t-lg" src={testImage} alt="" height={200} />
+        <div className="flex flex-col items-center max-w-64 px-4 py-3 hover:scale-105 transition duration-500 cursor-pointer shadow-md bg-white rounded-lg">
+            <Image
+                className="w-full rounded-t-lg"
+                src={testImage}
+                alt=""
+                layout="responsive"
+                width={500}
+                height={750}
+            />
             <div className="w-full flex justify-between">
                 <h2 className="px-2 text-lg font-semibold tracking-wide">Pizza Cake</h2>
                 <Rating />
@@ -15,9 +23,9 @@ export const ProductCard = () => {
                 <span className="text-sm text-gray-300">If filename is showing instead of thunder client</span>
                 <h3 className="w-full text-red-400 text-lg font-semibold my-2">$4.00</h3>
             </div>
-            <button className="w-full text-white text-md font-semibold px-5 py-2 rounded-lg bg-[#F17228]">
+            <Button className="w-full text-white text-md font-semibold px-5 py-2 rounded-lg bg-[#F17228] shadow-[#FD725C] shadow-md transition-all duration-300 hover:bg-[#fd7c68] hover:text-white">
                 Order Now
-            </button>
+            </Button>
         </div>
     );
 };

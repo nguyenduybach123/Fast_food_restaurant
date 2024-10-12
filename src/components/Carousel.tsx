@@ -7,15 +7,20 @@ import { Navigation, Pagination } from "swiper/modules";
 // App
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "@/types";
+import { SwiperOptions } from "swiper/types";
 
 // Type
 interface CarouselProps extends ComponentProps {
+    breakpoints: {
+        [width: number]: SwiperOptions;
+        [ratio: string]: SwiperOptions;
+    };
     clickable?: boolean;
     children: React.ReactElement<SwiperSlideProps>[];
 }
 
 // Component
-const Carousel: FC<CarouselProps> = ({ clickable = true, className, children }) => {
+const Carousel: FC<CarouselProps> = ({ breakpoints, clickable = true, className, children }) => {
     // Template
     return (
         <Swiper
@@ -23,20 +28,7 @@ const Carousel: FC<CarouselProps> = ({ clickable = true, className, children }) 
             pagination={{
                 clickable: clickable,
             }}
-            breakpoints={{
-                "@0.00": {
-                    slidesPerView: 3,
-                    spaceBetween: 2,
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 5,
-                },
-                1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 10,
-                },
-            }}
+            breakpoints={breakpoints}
             modules={[Navigation, Pagination]}
         >
             {children.map((slide) => React.cloneElement(slide))}

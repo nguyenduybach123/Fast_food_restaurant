@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import paypalImage from "../../assets/images/home/paypal.png";
+import paypalImage from "@/assets/images/home/paypal.png";
 
 const Footer = () => {
     return (
-        <div className="py-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-white text-sm mt-24">
+        <div className="px-4 md:p-8 lg:p-16 bg-white text-sm">
             {/* TOP */}
             <div className="flex flex-col md:flex-row">
                 {/* LEFT */}
