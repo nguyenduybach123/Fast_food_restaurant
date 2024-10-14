@@ -4,7 +4,7 @@ import paypalImage from "@/assets/images/home/paypal.png";
 
 const Footer = () => {
     return (
-        <div className="px-4 md:p-8 lg:p-16 bg-white text-sm">
+        <div className="px-4 md:p-4 lg:p-8 bg-white text-sm">
             {/* TOP */}
             <div className="flex flex-col md:flex-row">
                 {/* LEFT */}
