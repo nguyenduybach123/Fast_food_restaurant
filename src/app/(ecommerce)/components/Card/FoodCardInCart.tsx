@@ -18,7 +18,7 @@ const FoodCardInCart = () => {
                         <Button size="icon" variant="icon">
                             <MinusIcon width={20} height={20} />
                         </Button>
-                        <input className="w-10 h-8 px-2 text-center rounded-md outline-none" value={1} />
+                        <input className="w-10 h-8 px-2 text-center rounded-md outline-none" />
                         <Button size="icon" variant="icon">
                             <PlusIcon width={20} height={20} />
                         </Button>

@@ -7,7 +7,7 @@ import { MenuInfo } from "./MenuInfo";
 
 export const Header: FC = () => {
     return (
-        <div className="flex justify-between items-center sticky top-0 inset-x-0 px-4 py-2 md:px-16 lg:px-32 bg-white z-10">
+        <div className="flex justify-between items-center sticky top-0 inset-x-0 px-4 py-2 md:px-16 lg:px-32 bg-white z-50">
             <div className="flex items-center">
                 <Link href={"/"}>
                     <Image src={logoImage} width={80} height={80} alt="logo" />

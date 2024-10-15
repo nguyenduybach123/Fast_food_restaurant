@@ -1,12 +1,10 @@
 "use client";
 // Core
 import { FC } from "react";
-import { SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 
 // App
 import footerImage from "@/assets/images/home/footer.jpg";
-import { Carousel } from "@/components";
 import { ProductCard } from "@/components/Card/ProductCard";
 import { ProductCardFeatured } from "@/components/Card/ProductCardFeatured";
 
@@ -16,6 +14,7 @@ import { FoodCategory } from "./components/FoodCategory";
 import { OrderGuideStep } from "./components/OrderGuideStep";
 import { images } from "@/assets/images/home/guide";
 import { FoodFeaturedList } from "./components/FoodFeaturedList";
+import { Carousel } from "@/components";
 
 // Constant
 const variantFoodDeliveryAddress = {
@@ -97,7 +96,12 @@ export const HomePage: FC = () => {
             <div className="flex flex-col">
                 <div className="relative flex items-center bg-[#FDEDCA] py-16">
                     <div className="flex-auto w-full md:w-3/5 px-3 py-4 md:px-5 md:py-6">
-                        <motion.div variants={variantFoodDeliveryAddress} initial="initial" animate="animate">
+                        <motion.div
+                            className="relative z-20"
+                            variants={variantFoodDeliveryAddress}
+                            initial="initial"
+                            animate="animate"
+                        >
                             <FoodDeliveryAddress />
                         </motion.div>
                         <motion.div variants={variantFoodCategory} initial="initial" animate="animate">
@@ -122,36 +126,24 @@ export const HomePage: FC = () => {
                                 }}
                                 className="mt-16"
                             >
-                                <SwiperSlide key={1}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
-                                <SwiperSlide key={2}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
-                                <SwiperSlide key={3}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
-                                <SwiperSlide key={4}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
-                                <SwiperSlide key={5}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
-                                <SwiperSlide key={6}>
-                                    <motion.div variants={variantFoodCategory}>
-                                        <FoodCategory />
-                                    </motion.div>
-                                </SwiperSlide>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
+                                <motion.div variants={variantFoodCategory}>
+                                    <FoodCategory />
+                                </motion.div>
                             </Carousel>
                         </motion.div>
                     </div>
@@ -208,43 +200,27 @@ export const HomePage: FC = () => {
                     <Carousel
                         breakpoints={{
                             0: {
-                                slidesPerView: 1,
+                                slidesPerView: 2,
                                 spaceBetween: 5,
                             },
                             768: {
-                                slidesPerView: 3,
+                                slidesPerView: 4,
                                 spaceBetween: 10,
                             },
                             1024: {
-                                slidesPerView: 6,
+                                slidesPerView: 5,
                                 spaceBetween: 15,
                             },
                         }}
                     >
-                        <SwiperSlide key={1}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={2}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={3}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={4}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={5}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={6}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={7}>
-                            <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide key={8}>
-                            <ProductCard />
-                        </SwiperSlide>
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
                     </Carousel>
                 </div>
                 <div className="mt-16 px-16">

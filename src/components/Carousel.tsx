@@ -1,37 +1,62 @@
 "use client";
-// Core
 import React, { FC } from "react";
-import { Swiper, SwiperSlideProps } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-
-// App
-import { cn } from "@/lib/utils";
+import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCoverflow, Grid, Pagination } from "swiper/modules";
 import { ComponentProps } from "@/types";
-import { SwiperOptions } from "swiper/types";
+import { cn } from "@/lib/utils";
 
-// Type
-interface CarouselProps extends ComponentProps {
-    breakpoints: {
-        [width: number]: SwiperOptions;
-        [ratio: string]: SwiperOptions;
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+// App
+
+type CarouselProps = SwiperProps &
+    ComponentProps & {
+        breakpoints?: SwiperProps["breakpoints"];
+        grid?: SwiperProps["grid"];
+        autoplay?: SwiperProps["autoplay"];
+        effect?: SwiperProps["effect"];
+        coverflowEffect?: SwiperProps["coverflowEffect"];
+        centeredSlides?: SwiperProps["centeredSlides"];
+        pagination?: SwiperProps["pagination"];
+        children: React.ReactElement[];
     };
-    clickable?: boolean;
-    children: React.ReactElement<SwiperSlideProps>[];
-}
 
 // Component
-const Carousel: FC<CarouselProps> = ({ breakpoints, clickable = true, className, children }) => {
+const Carousel: FC<CarouselProps> = ({
+    breakpoints,
+    grid,
+    autoplay,
+    effect,
+    coverflowEffect,
+    centeredSlides,
+    pagination,
+    className,
+    children,
+}) => {
     // Template
     return (
         <Swiper
             className={cn(className, "flex justify-center items-center")}
-            pagination={{
-                clickable: clickable,
-            }}
+            pagination={pagination}
+            grid={grid}
+            autoplay={autoplay}
             breakpoints={breakpoints}
-            modules={[Navigation, Pagination]}
+            effect={effect}
+            coverflowEffect={coverflowEffect}
+            centeredSlides={centeredSlides}
+            modules={[
+                ...(pagination ? [Pagination] : []),
+                ...(grid ? [Grid] : []),
+                ...(coverflowEffect ? [EffectCoverflow] : []),
+                ...(autoplay ? [Autoplay] : []),
+            ]}
         >
-            {children.map((slide) => React.cloneElement(slide))}
+            {Array.isArray(children) ? (
+                children.map((slide) => <SwiperSlide key={slide.key}>{React.cloneElement(slide)}</SwiperSlide>)
+            ) : (
+                <SwiperSlide>{React.cloneElement(children)}</SwiperSlide>
+            )}
         </Swiper>
     );
 };
