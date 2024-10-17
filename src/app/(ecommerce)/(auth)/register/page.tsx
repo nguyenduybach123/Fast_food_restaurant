@@ -10,7 +10,7 @@ const RegisterPage = () => {
     const form = useForm();
 
     return (
-        <div className="px-4 md:px-8 lg:px-16">
+        <div className="px-4 md:px-8 lg:px-16 py-8">
             <div className="flex max-w-screen-2xl mx-auto">
                 <div className="w-1/2"></div>
                 <div className="w-1/2">

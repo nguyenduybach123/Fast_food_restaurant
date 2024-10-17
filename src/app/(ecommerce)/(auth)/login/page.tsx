@@ -1,5 +1,7 @@
 "use client";
-import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
@@ -9,13 +11,37 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { facebookLogo, googleLogo } from "@/assets/images/oauth2";
 
+// Constant
 const btnLoginStyle = "text-lg font-normal rounded-none";
 
+const formSchema = z.object({
+    username: z.string().min(8, {
+      message: "Username must be at least 8 characters.",
+    }),
+    password: z.string().min(8, {
+        message: "Password must be at least 8 characters.",
+    }),
+  })
+   
+
 const LoginPage = () => {
-    const form = useForm();
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+          username: "",
+          password: ""
+        },
+      })
+
+      const onSubmit = (values: z.infer<typeof formSchema>) => {
+        // Do something with the form values.
+        // ✅ This will be type-safe and validated.
+        console.log(values)
+      }
+
 
     return (
-        <div className="px-4 md:px-8 lg:px-16 py-16">
+        <div className="px-4 md:px-8 lg:px-16 py-8">
             <div className="flex max-w-screen-2xl mx-auto">
                 <div className="w-1/2"></div>
                 <div className="w-auto">
@@ -25,7 +51,7 @@ const LoginPage = () => {
                     >
                         <h1 className="text-4xl text-center font-semibold tracking-normal">Login</h1>
                         <Form {...form}>
-                            <form className="flex flex-col justify-center space-y-8 my-4">
+                            <form className="flex flex-col justify-center space-y-8 my-4" onSubmit={form.handleSubmit(onSubmit)}>
                                 <FormField
                                     control={form.control}
                                     name="username"
@@ -38,7 +64,7 @@ const LoginPage = () => {
                                 />
                                 <FormField
                                     control={form.control}
-                                    name="username"
+                                    name="password"
                                     render={({ field }) => (
                                         <FormItem>
                                             <TextField label="Password" {...field} />

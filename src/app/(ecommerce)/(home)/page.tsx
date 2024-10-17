@@ -13,7 +13,6 @@ import { FoodDeliveryAddress } from "./components/FoodDeliveryAddress";
 import { FoodCategory } from "./components/FoodCategory";
 import { OrderGuideStep } from "./components/OrderGuideStep";
 import { images } from "@/assets/images/home/guide";
-import { FoodFeaturedList } from "./components/FoodFeaturedList";
 import { Carousel } from "@/components";
 
 // Constant
@@ -221,11 +220,54 @@ export const HomePage: FC = () => {
                         <ProductCard />
                         <ProductCard />
                         <ProductCard />
+                        
                     </Carousel>
                 </div>
                 <div className="mt-16 px-16">
                     <h1 className="mb-8 text-4xl text-center text-popular tracking-normal">FEATURED</h1>
-                    <FoodFeaturedList />
+                    <Carousel
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 2,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 5,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 10,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 15,
+                    },
+                }}
+
+                pagination={{
+                    dynamicBullets: true
+                }}
+
+                grid={{
+                    rows: 2,
+                    fill: "row",
+                }}
+            >
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+            </Carousel>
                 </div>
                 <motion.div
                     className="md:px-16 my-16"
