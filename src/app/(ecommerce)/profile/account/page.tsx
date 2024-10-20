@@ -16,7 +16,7 @@ const MyAccountPage: FC<AccountDetailProps> = () => {
     return (
         <div>
             <div>
-                <h1>Account details</h1>
+                <h1 className="text-4xl font-semibold">Account details</h1>
                 <Form {...form}>
                     <form className="space-y-8 my-4">
                         <FormField
@@ -60,7 +60,7 @@ const MyAccountPage: FC<AccountDetailProps> = () => {
                             )}
                         />
                         <SelectField values={["Male", "Female"]} />
-                        <Button className="w-full" type="submit">
+                        <Button className="w-full text-xl font-semibold" type="submit">
                             Update Account
                         </Button>
                     </form>
