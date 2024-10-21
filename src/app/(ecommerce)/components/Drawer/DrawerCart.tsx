@@ -1,5 +1,8 @@
+// Core
 import React from "react";
+import { ChevronLeftIcon, ShoppingCartIcon } from "lucide-react";
 
+// App
 import {
     Drawer,
     DrawerBody,
@@ -10,10 +13,11 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components";
-import { ChevronLeftIcon, ShoppingCartIcon } from "lucide-react";
 import { FoodCardInCart } from "../Card/FoodCardInCart";
 
+// Component
 const DrawerCart = () => {
+    // Template
     return (
         <Drawer direction="right">
             <DrawerTrigger asChild>

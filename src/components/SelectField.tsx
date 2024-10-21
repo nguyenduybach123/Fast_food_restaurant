@@ -1,8 +1,17 @@
+// Core
 import React, { FC } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { cn } from "@/lib/utils";
 
+// App
+import { cn } from "@/lib/utils";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+
+// Type
+interface SelectFieldProps extends VariantProps<typeof selectFieldVariants> {
+    values: Array<string | number>;
+}
+
+// Constant
 const selectFieldVariants = cva("box-content  relative", {
     variants: {
         variant: {
@@ -14,12 +23,9 @@ const selectFieldVariants = cva("box-content  relative", {
     },
 });
 
-// Type
-interface SelectFieldProps extends VariantProps<typeof selectFieldVariants> {
-    values: Array<string | number>;
-}
-
+// Component
 const SelectField: FC<SelectFieldProps> = ({ values, variant }) => {
+    // Template
     return (
         <div className="w-full">
             <Select>

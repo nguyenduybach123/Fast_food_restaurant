@@ -1,12 +1,19 @@
-import { cn } from "@/lib/utils";
-import { ComponentProps } from "@/types";
+// Core
 import React, { FC } from "react";
+
+// App
+import { cn } from "@/lib/utils";
+
+// Type
+import { ComponentProps } from "@/types";
 
 interface CardFeaturedProps extends ComponentProps {
     isReverse?: boolean;
 }
 
-export const ProductCardFeatured: FC<CardFeaturedProps> = ({ isReverse = false, className }) => {
+// Component
+const FoodNewsCard: FC<CardFeaturedProps> = ({ isReverse = false, className }) => {
+    // Template
     return (
         <div
             className={cn("flex rounded-md drop-shadow-lg", isReverse ? "flex-row-reverse" : "", className)}
@@ -38,3 +45,5 @@ export const ProductCardFeatured: FC<CardFeaturedProps> = ({ isReverse = false, 
         </div>
     );
 };
+
+export { FoodNewsCard };

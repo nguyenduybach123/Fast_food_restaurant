@@ -1,7 +1,12 @@
+// Core
 import React from "react";
-import { Header } from "./components/layouts/Header/Header";
-import Footer from "./components/layouts/Footer";
+
+// App
+import { Footer, Header } from "./components/layouts";
+
+// Component
 export default function EcommerceLayout({ children }: { children: React.ReactNode }) {
+    // Template
     return (
         <div className="relative">
             <Header />

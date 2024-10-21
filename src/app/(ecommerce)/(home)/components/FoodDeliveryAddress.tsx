@@ -1,8 +1,9 @@
 // Core
 import React, { FC, useState } from "react";
-import { Check as CheckIcon, MapPin as MapPinIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Check as CheckIcon, MapPin as MapPinIcon } from "lucide-react";
 
+// Constant
 const mockDataAddress = [
     {
         name: "Quận 1",

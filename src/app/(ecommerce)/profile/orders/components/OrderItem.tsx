@@ -1,12 +1,18 @@
-import { Button } from "@/components";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+// Core
 import React, { FC } from "react";
 
+// App
+import { Button } from "@/components";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+// Type
 interface OrderItemProps {
     enable?: boolean;
 }
 
+// Component
 const OrderItem: FC<OrderItemProps> = () => {
+    // Template
     return (
         <div
             className="px-4 py-4 rounded-md"

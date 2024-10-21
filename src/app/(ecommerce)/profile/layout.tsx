@@ -1,8 +1,11 @@
-import { HandPlatterIcon, LogOutIcon, UserIcon } from "lucide-react";
-import Link from "next/link";
+// Core
 import React from "react";
+import Link from "next/link";
+import { HandPlatterIcon, LogOutIcon, UserIcon } from "lucide-react";
 
+// Component
 const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
+    // Template
     return (
         <div className="px-8 md:px-16 lg:px-32 py-16">
             <div>

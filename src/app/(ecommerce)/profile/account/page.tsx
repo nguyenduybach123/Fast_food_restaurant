@@ -1,18 +1,25 @@
 "use client";
+// Core
 import React, { FC } from "react";
+import { useForm } from "react-hook-form";
+
+// App
+import SelectField from "@/components/SelectField";
 import { Button } from "@/components";
 import { TextField } from "@/components/TextField";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import SelectField from "@/components/SelectField";
 
+// Type
 type AccountDetailProps = {
     enable?: boolean;
 };
 
+// Component
 const MyAccountPage: FC<AccountDetailProps> = () => {
+    // Hook
     const form = useForm();
 
+    // Template
     return (
         <div>
             <div>

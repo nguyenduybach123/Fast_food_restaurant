@@ -1,12 +1,18 @@
-import { Button } from "@/components";
-import { PlusIcon } from "lucide-react";
+// Core
 import React, { FC } from "react";
+import { PlusIcon } from "lucide-react";
 
+// App
+import { Button } from "@/components";
+
+// Type
 type FoodRecommendCardProps = {
     enable?: boolean;
 };
 
+// Component
 const FoodRecommendCard: FC<FoodRecommendCardProps> = () => {
+    // Template
     return (
         <div
             className="h-40 flex items-end rounded-md bg-cover bg-center bg-no-repeat"
@@ -23,4 +29,4 @@ const FoodRecommendCard: FC<FoodRecommendCardProps> = () => {
     );
 };
 
-export default FoodRecommendCard;
+export { FoodRecommendCard };

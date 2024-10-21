@@ -1,19 +1,22 @@
 "use client";
+// Core
+import Link from "next/link";
+import Image from "next/image";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
+// App
+import { cn } from "@/lib/utils";
+import { TextField } from "@/components/TextField";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import Link from "next/link";
-import { TextField } from "@/components/TextField";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { facebookLogo, googleLogo } from "@/assets/images/oauth2";
 
 // Constant
 const btnLoginStyle = "text-lg font-normal rounded-none";
 
+// Schema
 const formSchema = z.object({
     username: z.string().min(8, {
         message: "Username must be at least 8 characters.",
@@ -23,7 +26,9 @@ const formSchema = z.object({
     }),
 });
 
+// Component
 const LoginPage = () => {
+    // Hook
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -32,15 +37,15 @@ const LoginPage = () => {
         },
     });
 
+    // Function
     const onSubmit = (values: z.infer<typeof formSchema>) => {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
         console.log(values);
     };
 
+    // Template
     return (
         <div
-            className="md:w-[500px] h-[600px] px-8 py-8 rounded-lg bg-white"
+            className="md:w-[500px] h-[650px] px-8 py-8 rounded-lg bg-white"
             style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
         >
             <h1 className="text-4xl text-center font-semibold tracking-normal">Login</h1>

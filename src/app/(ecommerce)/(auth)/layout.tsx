@@ -1,8 +1,13 @@
-import { Carousel } from "@/components";
-import Image from "next/image";
+// Core
 import React, { FC } from "react";
+import Image from "next/image";
 
+// App
+import { Carousel } from "@/components";
+
+// Component
 const AuthLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
+    // Template
     return (
         <div className="px-4 md:px-8 lg:px-16 py-8 bg-[rgb(253,237,202)]">
             <div className="flex justify-center max-w-screen-2xl mx-auto">

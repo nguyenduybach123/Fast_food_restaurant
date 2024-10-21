@@ -1,10 +1,15 @@
+// Core
 import React from "react";
-import categoryImage from "@/assets/images/home/Ellipse 6.png";
-import { ProductList } from "./components/ProductList";
-import { Carousel } from "@/components";
 import Image from "next/image";
 
-export const Filter = () => {
+// App
+import { Carousel } from "@/components";
+import { ProductList } from "./components/ProductList";
+import categoryImage from "@/assets/images/home/Ellipse 6.png";
+
+// Component
+export const FilterPage = () => {
+    // Template
     return (
         <div className="bg-gradient-to-b from-[#fdeece] via-[#FFF] to-[#FFF]">
             <div className="px-16 md:px-64 py-8">
@@ -93,4 +98,4 @@ export const Filter = () => {
     );
 };
 
-export default Filter;
+export default FilterPage;

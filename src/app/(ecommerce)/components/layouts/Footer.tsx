@@ -1,8 +1,13 @@
+// Core
 import Image from "next/image";
 import Link from "next/link";
+
+// App
 import paypalImage from "@/assets/images/home/paypal.png";
 
+// Component
 const Footer = () => {
+    // Template
     return (
         <div className="px-4 md:p-4 lg:p-8 bg-white text-sm">
             {/* TOP */}
@@ -91,4 +96,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export { Footer };

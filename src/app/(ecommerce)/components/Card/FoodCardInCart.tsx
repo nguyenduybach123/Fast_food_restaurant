@@ -1,10 +1,15 @@
-import Image from "next/image";
+// Core
 import React from "react";
-import testImage from "@/assets/images/home/TestProduct.jpg";
-import { Button } from "@/components";
+import Image from "next/image";
 import { MinusIcon, PlusIcon } from "lucide-react";
 
+// App
+import testImage from "@/assets/images/home/TestProduct.jpg";
+import { Button } from "@/components";
+
+// Component
 const FoodCardInCart = () => {
+    // Template
     return (
         <div className="flex space-x-4 py-4 border-b-2 border-gray-300">
             <div className="">

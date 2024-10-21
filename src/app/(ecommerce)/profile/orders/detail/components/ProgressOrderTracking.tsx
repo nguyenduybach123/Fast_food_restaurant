@@ -1,11 +1,15 @@
-import { CatIcon } from "lucide-react";
+// Core
 import React, { FC } from "react";
+import { CatIcon } from "lucide-react";
 
+// Type
 interface ProgressOrderTrackingProps {
     enable?: boolean;
 }
 
+// Component
 const ProgressOrderTracking: FC<ProgressOrderTrackingProps> = () => {
+    // Template
     return (
         <div className="h-40">
             <div className="relative flex justify-between items-center z-10">

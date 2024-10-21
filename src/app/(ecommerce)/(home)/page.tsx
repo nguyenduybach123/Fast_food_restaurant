@@ -5,29 +5,18 @@ import { motion } from "framer-motion";
 
 // App
 import footerImage from "@/assets/images/home/footer.jpg";
-import { ProductCard } from "@/components/Card/ProductCard";
-import { ProductCardFeatured } from "@/components/Card/ProductCardFeatured";
-
-// Internal
-import { FoodDeliveryAddress } from "./components/FoodDeliveryAddress";
-import { FoodCategory } from "./components/FoodCategory";
-import { OrderGuideStep } from "./components/OrderGuideStep";
-import { images } from "@/assets/images/home/guide";
+import { enjoyImage, locationImage, orderImage, payImage } from "@/assets/images";
 import { Carousel } from "@/components";
 
-// Constant
-const variantFoodDeliveryAddress = {
-    initial: {
-        opacity: 0,
-    },
-    animate: {
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-        },
-    },
-};
+// Internal
+import { FoodCategory } from "./components/FoodCategory";
+import { OrderGuideStep } from "./components/OrderGuideStep";
+import { DeliveryAddress } from "./components/DeliveryAddress";
+import { Banner } from "./components/Banner";
+import { FoodNewsCard } from "@/components/Card/FoodNewsCard";
+import { FoodCard } from "@/components/Card/FoodCard";
 
+// Constant
 const variantFoodCategory = {
     initial: {
         opacity: 0,
@@ -93,93 +82,108 @@ export const HomePage: FC = () => {
     return (
         <div className="relative h-full font-semibold py-4 overflow-x-hidden">
             <div className="flex flex-col">
-                <div className="relative flex items-center bg-[#FDEDCA] py-16">
-                    <div className="flex-auto w-full md:w-3/5 px-3 py-4 md:px-5 md:py-6">
-                        <motion.div
-                            className="relative z-20"
-                            variants={variantFoodDeliveryAddress}
-                            initial="initial"
-                            animate="animate"
-                        >
-                            <FoodDeliveryAddress />
-                        </motion.div>
-                        <motion.div variants={variantFoodCategory} initial="initial" animate="animate">
-                            <Carousel
-                                breakpoints={{
-                                    0: {
-                                        slidesPerView: 1,
-                                        spaceBetween: 2,
-                                    },
-                                    640: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 5,
-                                    },
-                                    768: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 10,
-                                    },
-                                    1024: {
-                                        slidesPerView: 4,
-                                        spaceBetween: 15,
-                                    },
-                                }}
-                                className="mt-16"
-                            >
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                                <motion.div variants={variantFoodCategory}>
-                                    <FoodCategory />
-                                </motion.div>
-                            </Carousel>
-                        </motion.div>
+                <DeliveryAddress hasAddress={false} />
+                <div className="relative">
+                    <div className="relative w-full">
+                        <Carousel slidesPerView={1} spaceBetween={0} navigation={true}>
+                            <div key={1}>
+                                <Banner />
+                            </div>
+                            <div key={2}>
+                                <Banner />
+                            </div>
+                            <div key={3}>
+                                <Banner />
+                            </div>
+                            <div key={4}>
+                                <Banner />
+                            </div>
+                        </Carousel>
+                        <div className="container absolute left-1/2 -bottom-[h-1/2] -translate-x-1/2 -translate-y-1/2 px-3 py-2 md:px-4 md:py-4 bg-[#FDEDCA] rounded-t-lg z-10">
+                            <motion.div variants={variantFoodCategory} initial="initial" animate="animate">
+                                <Carousel
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 2,
+                                            spaceBetween: 2,
+                                        },
+                                        640: {
+                                            slidesPerView: 2,
+                                            spaceBetween: 5,
+                                        },
+                                        768: {
+                                            slidesPerView: 3,
+                                            spaceBetween: 5,
+                                        },
+                                        1024: {
+                                            slidesPerView: 4,
+                                            spaceBetween: 5,
+                                        },
+                                    }}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false,
+                                    }}
+                                >
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                    <motion.div variants={variantFoodCategory}>
+                                        <FoodCategory />
+                                    </motion.div>
+                                </Carousel>
+                            </motion.div>
+                        </div>
                     </div>
                     <div className="hidden md:flex justify-center w-2/5 items-center flex-auto"></div>
                 </div>
+                <div className="h-32 bg-[#FDEDCA]"></div>
                 <div className="md:px-16 bg-gradient-to-b from-[#FDEDCA] via-[#FFF] to-[#FFF]">
-                    <h1 className="mb-16 text-4xl text-center text-popular tracking-normal">How does it work</h1>
+                    <h1 className="mb-8 pt-8 lg:pt-16 text-4xl text-center text-popular tracking-normal">
+                        How does it work
+                    </h1>
                     <motion.div
-                        className="flex justify-around items-center"
+                        className="flex justify-around"
                         variants={variantOrderGuideStep}
                         initial="initial"
                         whileInView="animate"
                     >
                         <motion.div variants={variantOrderGuideStep}>
                             <OrderGuideStep
-                                image={images.locationIcon}
+                                image={locationImage}
                                 title="Select location"
                                 decription="Choose the location where your food will be delivered."
                             />
                         </motion.div>
                         <motion.div variants={variantOrderGuideStep}>
                             <OrderGuideStep
-                                image={images.orderIcon}
+                                image={orderImage}
                                 title="Choose order"
                                 decription="Check over hundreds of menus to pick your favorite food"
                             />
                         </motion.div>
                         <motion.div variants={variantOrderGuideStep}>
                             <OrderGuideStep
-                                image={images.payIcon}
+                                image={payImage}
                                 title="Pay advanced"
                                 decription="It's quick, safe, and simple. Select several methods of payment"
                             />
                         </motion.div>
                         <motion.div variants={variantOrderGuideStep}>
                             <OrderGuideStep
-                                image={images.enjoyIcon}
+                                image={enjoyImage}
                                 title="Enjoy meals"
                                 decription="Food is made and delivered directly to your home."
                             />
@@ -192,7 +196,7 @@ export const HomePage: FC = () => {
                     initial="initialReverse"
                     whileInView="animate"
                 >
-                    <ProductCardFeatured isReverse />
+                    <FoodNewsCard isReverse />
                 </motion.div>
                 <div className="mt-16 px-16">
                     <h1 className="mb-8 text-4xl text-center text-popular tracking-normal">POPULAR</h1>
@@ -204,70 +208,60 @@ export const HomePage: FC = () => {
                             },
                             768: {
                                 slidesPerView: 4,
-                                spaceBetween: 10,
-                            },
-                            1024: {
-                                slidesPerView: 5,
                                 spaceBetween: 15,
+                            },
+                            1280: {
+                                slidesPerView: 5,
+                                spaceBetween: 20,
                             },
                         }}
                     >
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
                     </Carousel>
                 </div>
                 <div className="mt-16 px-16">
                     <h1 className="mb-8 text-4xl text-center text-popular tracking-normal">FEATURED</h1>
                     <Carousel
-                breakpoints={{
-                    0: {
-                        slidesPerView: 1,
-                        spaceBetween: 2,
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 5,
-                    },
-                    768: {
-                        slidesPerView: 4,
-                        spaceBetween: 10,
-                    },
-                    1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 15,
-                    },
-                }}
-
-                pagination={{
-                    dynamicBullets: true
-                }}
-
-                grid={{
-                    rows: 2,
-                    fill: "row",
-                }}
-            >
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-            </Carousel>
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 2,
+                                spaceBetween: 5,
+                            },
+                            768: {
+                                slidesPerView: 4,
+                                spaceBetween: 15,
+                            },
+                            1280: {
+                                slidesPerView: 5,
+                                spaceBetween: 20,
+                            },
+                        }}
+                        grid={{
+                            rows: 2,
+                            fill: "row",
+                        }}
+                    >
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                        <FoodCard />
+                    </Carousel>
                 </div>
                 <motion.div
                     className="md:px-16 my-16"
@@ -275,7 +269,7 @@ export const HomePage: FC = () => {
                     initial="initialForward"
                     whileInView="animate"
                 >
-                    <ProductCardFeatured />
+                    <FoodNewsCard />
                 </motion.div>
                 <div
                     className="flex justify-center items-center h-64 bg-center bg-cover bg-no-repeat"

@@ -1,10 +1,14 @@
-import Image from "next/image";
+// Core
 import React from "react";
-import testImage from "../../assets/images/home/TestProduct.jpg";
-import { Rating } from "./Rating";
-import { Button } from "../ui";
+import Image from "next/image";
 
-export const ProductCard = () => {
+// App
+import testImage from "../../assets/images/home/TestProduct.jpg";
+import { Button } from "../ui/button";
+
+// Component
+const FoodCard = () => {
+    // Template
     return (
         <div className="flex flex-col items-center max-w-64 px-4 py-3 hover:scale-105 transition duration-500 cursor-pointer shadow-md bg-white rounded-lg">
             <Image
@@ -17,7 +21,6 @@ export const ProductCard = () => {
             />
             <div className="w-full flex justify-between">
                 <h2 className="px-2 text-lg font-semibold tracking-wide">Pizza Cake</h2>
-                <Rating />
             </div>
             <div className="px-1">
                 <span className="text-sm text-gray-300">If filename is showing instead of thunder client</span>
@@ -29,3 +32,5 @@ export const ProductCard = () => {
         </div>
     );
 };
+
+export { FoodCard };

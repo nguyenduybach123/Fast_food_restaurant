@@ -1,17 +1,22 @@
 "use client";
+// Core
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 
+// App
 import { Button } from "@/components/ui/button";
-import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import Link from "next/link";
 import { TextField } from "@/components/TextField";
+import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 
+// Component
 const RegisterPage = () => {
+    // Hook
     const form = useForm();
 
+    // Tempalte
     return (
         <div
-            className="md:w-[500px] h-[600px] px-8 py-8 rounded-r-lg bg-white"
+            className="md:w-[500px] h-[650px] px-8 py-8 rounded-r-lg bg-white"
             style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
         >
             <h1 className="text-4xl text-center font-semibold tracking-normal">Register</h1>

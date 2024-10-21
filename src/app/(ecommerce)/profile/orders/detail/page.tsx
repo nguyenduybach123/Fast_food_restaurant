@@ -1,12 +1,17 @@
+// Core
 import React, { FC } from "react";
+
+// App
 import { Button } from "@/components";
 import ProgressOrderTracking from "./components/ProgressOrderTracking";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+// Type
 interface OrderDetailProps {
     enable?: boolean;
 }
 
+// Component
 const OrderDetailPage: FC<OrderDetailProps> = () => {
     return (
         <div className="px-3">

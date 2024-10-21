@@ -1,13 +1,21 @@
 "use client";
-import cn from "classnames";
+// Core
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
+// App
+import { cn } from "@/lib/utils";
+
+// Constant
 const navigates = [
     {
-        title: "MENU",
+        title: "HOME",
         link: "/",
+    },
+    {
+        title: "MENU",
+        link: "/list",
     },
     {
         title: "PROMOTION",
@@ -23,9 +31,12 @@ const navigates = [
     },
 ];
 
-export const MenuNavigate = () => {
+// Component
+const MenuNavigate = () => {
+    // Hook
     const pathname = usePathname();
 
+    // Template
     return (
         <div className="hidden md:block ml-4 md:ml-8 lg:ml-16 font-semibold text-md">
             <ul className="flex items-center space-x-8">
@@ -46,3 +57,5 @@ export const MenuNavigate = () => {
         </div>
     );
 };
+
+export { MenuNavigate };
