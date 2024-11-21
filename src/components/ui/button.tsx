@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 // Constant
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center whitespace-nowrap space-x-1 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     {
         variants: {
             variant: {
@@ -18,6 +18,7 @@ const buttonVariants = cva(
                 secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
+                icon: "border-none outline-none rounded-full",
             },
             size: {
                 default: "h-10 px-4 py-2",
@@ -37,16 +38,21 @@ const buttonVariants = cva(
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
         VariantProps<typeof buttonVariants> {
+    icon?: React.ReactNode;
     asChild?: boolean;
 }
 
 // Components
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, asChild = false, ...props }, ref) => {
+    ({ variant, size, icon, asChild = false, className, children, ...props }, ref) => {
         const Comp = asChild ? Slot : "button";
-
         // Template
-        return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+        return (
+            <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+                {icon}
+                {children}
+            </Comp>
+        );
     },
 );
 Button.displayName = "Button";
