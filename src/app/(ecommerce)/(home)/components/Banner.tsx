@@ -23,6 +23,9 @@ const Banner: FC<BannerProps> = ({ className }) => {
                     className,
                 )}
                 style={{
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                     background:
                         "url(https://images.pexels.com/photos/3682838/pexels-photo-3682838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
                 }}

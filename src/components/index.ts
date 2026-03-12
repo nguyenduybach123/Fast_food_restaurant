@@ -1,2 +1,2 @@
-export { Button } from "./ui";
+export { Button } from "./ui/button";
 export { Carousel } from "./Carousel";
